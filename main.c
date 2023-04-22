@@ -7,6 +7,12 @@
 #include "Logica/Logica.h"
 #include "MatrizMemoria/Matriz.h"
 
+/*
+ * Politica correspondiente: Particiones variables, Mapa Bits.
+ * Grupo#1 - Wilfredo Barquero, Elmer Mejias, Jurguen Monge.
+ * Información Sobre la politica en el archivo README.MD
+ */
+
 struct Bloque matriz[8][8];
 
 pthread_t proceso;
@@ -144,7 +150,8 @@ void *empezarSimulacion(void *args){
 
             NodoProcesos *nodoEliminar = listaContenedor->primero; // Almacenar nodo a eliminar
             printf("\nLiberando de memoria los bloques del proceso: %d", nodoEliminar->id);
-            liberarProceso(nodoEliminar->id, matriz); // Liberar memoria
+           //liberarProceso(nodoEliminar->id, matriz); // Liberar memoria
+            liberarMemoria(nodoEliminar,matriz); //Libera la memoria por medio de la lista de posiciones que tiene el proceso
             eliminarProcesoEsperando(listaContenedor, nodoEliminar); // Eliminar proceso de la lista
             mostrarMatriz(matriz); // Imprimir matriz
 

@@ -15,11 +15,16 @@ void insertarUnProceso(ListaProcesos *lista, NodoProcesos *nodo){
     insertar(lista, nodo);
 }
 
+//Pasa un proceso de la lista de espera a la lista que ya fueron atendidos en memoria
 void pasarProcesoContenedor(ListaProcesos *listaEspera, ListaProcesos *listaContenedor){
     if(!listaVacia(listaEspera)){
+        //Crea un nodo con el primero de la lista de espera
         NodoProcesos *almacenarProceso = crearNodoProcesos(listaEspera->primero->nombre,listaEspera->primero->peso,listaEspera->primero->id, listaEspera->primero->listaPosicion);
+        //Cambia la referencia del primero de lista
         listaEspera->primero = listaEspera->primero->siguiente;
+        //Inserta el nodo en la lista contenedor
         insertarUnProceso(listaContenedor,almacenarProceso);
+        //Elimina el nodo de la lista de espera
         eliminarProcesoEsperando(listaEspera,almacenarProceso);
     }else{
         printf("Ya no hay mas procesos");
@@ -59,50 +64,18 @@ void asignarEspacioDisponible(struct Bloque matriz[8][8], NodoProcesos *nodo){
     }
 }
 
-//void llenarMatriz( Nodo* cabeza, int** matriz, int num_filas, int num_columnas) {
-//    int fila = 0, columna = 0;
-//    while (cabeza != NULL) {
-//        matriz[fila][columna] = cabeza->dato;
-//        cabeza = cabeza->siguiente;
-//        columna++;
-//        if (columna == num_columnas) {
-//            fila++;
-//            columna = 0;
-//        }
-//    }
-//}
-//char nombre[50];
-//int peso;
-//int id;
-//
-//void llenarMatriz(ListaProcesos *listaProcesos, NodoProcesos** matriz, int num_filas, int num_columnas) {
-//    int fila = 0, columna = 0;
-//    NodoProcesos* actual = listaProcesos->primero;
-//    while (actual != NULL) {
-//        matriz[fila][columna] = actual;
-//        actual = actual->siguiente;
-//        columna++;
-//        if (columna == num_columnas) {
-//            fila++;
-//            columna = 0;
-//        }
-//    }
-//}
-//matriz bits
-//void recorrerMatriz(int FILAS, int COLUMNAS) {
-//    unsigned char mapeo = 0b10101010; // Mapeo de ejemplo ob indica que es un valor binario
-//    int matriz[FILAS][COLUMNAS];
-//    int fila, columna;
-//
-//    for (fila = 0; fila < FILAS; fila++) {
-//        for (columna = 0; columna < COLUMNAS; columna++) {
-//            int bit = (mapeo >> (fila * COLUMNAS + columna)) & 1;
-//            matriz[fila][columna] = bit;
-//            printf("%d\t", matriz[fila][columna]);
-//        }
-//        printf("\n");
-//    }
-//}
+//Metodo para liberar memoria de la matriz segun las posiciones en que se ubica el proceso, con la lista de posiciones
+void liberarMemoria(NodoProcesos *nodo, struct Bloque matriz[8][8]){
+    NodoPosicion *aux = nodo->listaPosicion->primero;
+    while (aux != NULL){ //Se recorre la lista de posiciones del proceso
 
+        matriz[aux->i][aux->j].disponible = 0; //Y se libera la disponibilidad en memoria
+        matriz[aux->i][aux->j].idProceso = 0; //Se libera el id del proceso en memoria
+
+        //printf("Eliminando pos i:%d j:%d ",);
+
+        aux = aux->siguiente;
+    }
+}
 
 #endif //QUIZ_SO_LOGICA_H
