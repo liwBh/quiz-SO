@@ -28,11 +28,14 @@ listas enlazadas, matrices u otras estructuras de datos, para rastrear la ubicac
 responsabilidad del proceso gestionar la asignación y liberación de memoria de manera adecuada para evitar errores de 
 acceso a memoria no asignada o fugas de memoria.
 
+![image](https://user-images.githubusercontent.com/68663454/233810559-5a150d2f-899e-484f-9293-41039ff2f62b.png)
+
+
 En resumen, en un sistema de gestión de memoria basado en mapas de bits, el proceso generalmente debe llevar un registro de qué
 bloques de memoria le han sido asignados y qué bloques están disponibles o asignados a otros procesos. El bloque de memoria en
 sí mismo por lo general no tiene conocimiento de a qué proceso está ligado.
 
-#### Gestión de memoria con mapas de bits
+#### Gestión de memoria con mapeo de bits
 
 El tamaño de la unidad de asignación es una cuestión de diseño importante
 
@@ -43,5 +46,8 @@ pequeño, pero podría desperdiciarse una unidad de memoria
 apreciable en la última unidad de asignación del proceso si el
 tamaño del proceso no es un múltiplo exacto de la unidad de
 asignación
+
+![image](https://user-images.githubusercontent.com/68663454/233810550-81c1c0a5-89e3-462f-a834-2b0fe313ae38.png)
+
 
 
