@@ -86,7 +86,7 @@ void llenarListaProcesosEsperando(){
     printf("\n---------Creando procesos ---------\n");
 
     srand(time(NULL));
-    int nProcesos = rand() % (40 - 20 + 1) + 20;
+    int nProcesos = rand() % (30 - 25 + 1) + 25;
 
     for (int i = 0; i < nProcesos; ++i) {
         char str[10];

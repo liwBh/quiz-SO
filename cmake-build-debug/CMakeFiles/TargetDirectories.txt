@@ -1,3 +1,0 @@
-/home/liwbh/CLionProjects/quiz-SO/cmake-build-debug/CMakeFiles/quiz_SO.dir
-/home/liwbh/CLionProjects/quiz-SO/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/liwbh/CLionProjects/quiz-SO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
