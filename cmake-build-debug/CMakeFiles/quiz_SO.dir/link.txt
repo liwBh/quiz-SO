@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/quiz_SO.dir/main.c.o -o quiz_SO 
