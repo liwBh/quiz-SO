@@ -143,10 +143,10 @@ void *empezarSimulacion(void *args){
 
         pthread_join(proceso, NULL);
 
-        //verificar si el llenado es igual o mayor al 75%, 1 = Si, 0 = No
+        //verificar si el llenado es igual o mayor al 65%, 1 = Si, 0 = No
 
         if( validarLlenado(matriz) ) {
-            printf("\nLa memoria ha llegado aun 3/4 de su capacidad\n");
+            printf("\nLa memoria ha llegado aun 60%% de su capacidad\n");
 
             NodoProcesos *nodoEliminar = seleccionarNodoAleatorio(listaContenedor); // Almacenar nodo a eliminar
             printf("\nLiberando de memoria %d bloques del proceso: %d",(nodoEliminar->peso/4), nodoEliminar->id);
