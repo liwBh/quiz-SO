@@ -1,0 +1,3 @@
+/home/jurguen/Documentos/GitHub/quiz-SO/cmake-build-debug/CMakeFiles/quiz_SO.dir
+/home/jurguen/Documentos/GitHub/quiz-SO/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/jurguen/Documentos/GitHub/quiz-SO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
