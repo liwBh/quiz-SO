@@ -45,21 +45,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindCodeBlocks.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/ProcessorCount.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "/snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake"
 		},
 		{
@@ -101,8 +86,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/jurguen/Documentos/GitHub/quiz-SO/cmake-build-debug",
-		"source" : "/home/jurguen/Documentos/GitHub/quiz-SO"
+		"build" : "/home/liwbh/CLionProjects/quiz-SO/cmake-build-debug",
+		"source" : "/home/liwbh/CLionProjects/quiz-SO"
 	},
 	"version" : 
 	{
