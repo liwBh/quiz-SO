@@ -10,7 +10,7 @@
 /*
  * Politica correspondiente: Particiones variables, Mapa Bits.
  * Grupo#1 - Wilfredo Barquero, Elmer Mejias, Jurguen Monge.
- * Información Sobre la politica en el archivo README.MD
+ 
  */
 
 struct Bloque matriz[8][8];
@@ -94,7 +94,7 @@ void llenarListaProcesosEsperando(){
         int peso = 0;
 
         do {
-            peso = rand() % 20 + 1 ;
+            peso = rand() % 40 + 1 ;
         } while (peso % 4 != 0);
 
         sprintf(str, "%d",(i+1));
@@ -123,7 +123,7 @@ void *iniciarProceso(void * args){
     printf("\n");
 
     //asignar bloques
-    asignarEspacioDisponible(matriz,nodoProcesos);
+    asignarEspacioDisponible(matriz,nodoProcesos, listaContenedor);
 
     //Imprimir matriz
     mostrarMatriz( matriz );
@@ -148,8 +148,8 @@ void *empezarSimulacion(void *args){
         if( validarLlenado(matriz) ) {
             printf("\nLa memoria ha llegado aun 3/4 de su capacidad\n");
 
-            NodoProcesos *nodoEliminar = listaContenedor->primero; // Almacenar nodo a eliminar
-            printf("\nLiberando de memoria los bloques del proceso: %d", nodoEliminar->id);
+            NodoProcesos *nodoEliminar = seleccionarNodoAleatorio(listaContenedor); // Almacenar nodo a eliminar
+            printf("\nLiberando de memoria %d bloques del proceso: %d",(nodoEliminar->peso/4), nodoEliminar->id);
            //liberarProceso(nodoEliminar->id, matriz); // Liberar memoria
             liberarMemoria(nodoEliminar,matriz); //Libera la memoria por medio de la lista de posiciones que tiene el proceso
             eliminarProcesoEsperando(listaContenedor, nodoEliminar); // Eliminar proceso de la lista

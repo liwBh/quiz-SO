@@ -54,7 +54,7 @@ void eliminarProcesoEsperando(ListaProcesos *lista, NodoProcesos *nodoEliminar){
 
         while (aux1 != NULL){
             //Si el nodo a eliminar es la ultima igualamos las variables de la lista a NULL
-            if(aux2->id == lista->ultimo->id){
+            if(aux2->id == lista->ultimo->id && lista->primero->id == lista->ultimo->id ){
                 lista->primero = NULL;
                 lista->ultimo = NULL;
                 //si elimina el ultimo nodo y solo hay 2 nodos
